@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>draw-line</title>
+</head>
+<body>
+  <canvas id="canvas" style="width: 300; height: 300;">
+    您的浏览器不支持canvas, 请升级您的浏览器
+  </canvas>
+</body>
+<script type="text/javascript">
+  function drawLine() {
+    var canvas = document.getElementById('canvas')
+    if(!canvas.getContext) return;
+    var ctx = canvas.getContext('2d')
+
+    // 绘制一条封闭的曲线
+    ctx.beginPath()
+    ctx.moveTo(50, 50)
+    ctx.lineTo(200, 50);
+    ctx.closePath()
+    ctx.stroke()
+  }
+  drawLine()
+</script>
+</html>
